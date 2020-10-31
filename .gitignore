@@ -1,0 +1,5 @@
+.DS_Store
+datasets/.DS_Store
+out
+temp
+text-prep/.ipynb_checkpoints
