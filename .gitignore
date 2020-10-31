@@ -3,3 +3,4 @@ datasets/.DS_Store
 out
 temp
 text-prep/.ipynb_checkpoints
+doaj_1.csv
