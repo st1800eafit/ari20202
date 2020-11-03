@@ -1,0 +1,25 @@
+desde la MÁQUINA VIRTUAL EC2:
+
+    un archivo:
+
+    [ec2-user@ip-172-31-45-193 ~]$ docker exec -it my_solr post -c taller2 /bitnami/datalake/papers-pdf-txt/0704.3504.pdf.txt
+
+    un directorio:
+
+    [ec2-user@ip-172-31-45-193 ~]$ docker exec -it my_solr post -c taller2 /bitnami/datalake/papers-pdf-txt/
+
+desde el DOCKER:
+
+    [ec2-user@ip-172-31-45-193 ~]$ docker exec -it my_solr /bin/bash
+
+    un archivo:
+
+    I have no name!@9885cc022ab2:/$ post -c taller2 /bitnami/datalake/papers-pdf-txt/0704.3504.pdf.txt
+
+    un patrón de archivos:
+
+    I have no name!@9885cc022ab2:/$ post -c taller2 -recursive /bitnami/datalake/papers-pdf-txt/07*.txt
+
+    un directorio completo:
+
+    I have no name!@9885cc022ab2:/$ post -c taller2 /bitnami/datalake/papers-pdf-txt/

@@ -1,0 +1,38 @@
+# instalar Apache Solr sobre docker:
+
+copie el docker-compose.yml del github:
+
+    [ec2-user@ip-172-31-45-193 ~]$ curl https://raw.githubusercontent.com/st1800eafit/ari20202/master/taller2/docker-compose.yml -o $HOME/docker-compose.yml
+
+    [ec2-user@ip-172-31-45-193 ~]$ mkdir datalake
+    [ec2-user@ip-172-31-45-193 ~]$ mkdir solr
+    [ec2-user@ip-172-31-45-193 ~]$ chmod 777 solr
+
+Subir Solr:
+
+    [ec2-user@ip-172-31-45-193 ~]$ docker-compose up -d
+
+Copiar archivos de conf del core 'taller2': (solo se hace esta una vez, o cuando reinstale Solr)
+
+    [ec2-user@ip-172-31-45-193 ~]$ docker exec -it my_solr cp -r /bitnami/solr/data/configsets/sample_techproducts_configs/conf/ /bitnami/solr/data/taller2/
+
+Verificar solr arriba, desde un browser:
+
+    http://dir-ip-or-nombre-instancia.amazon.com:8983
+
+Bajar Solr:
+
+    [ec2-user@ip-172-31-45-193 ~]$ docker-compose down
+
+Reinstalar Solr:
+
+    [ec2-user@ip-172-31-45-193 ~]$ docker-compose down
+    [ec2-user@ip-172-31-45-193 ~]$ sudo rm -rf solr
+    [ec2-user@ip-172-31-45-193 ~]$ docker rm my_solr
+    [ec2-user@ip-172-31-45-193 ~]$ mkdir solr
+    [ec2-user@ip-172-31-45-193 ~]$ chmod 777 solr
+    [ec2-user@ip-172-31-45-193 ~]$ docker-compose up -d
+    [ec2-user@ip-172-31-45-193 ~]$ docker exec -it my_solr cp -r /bitnami/solr/data/configsets/sample_techproducts_configs/conf/ /bitnami/solr/data/taller2/
+    [ec2-user@ip-172-31-45-193 ~]$ docker-compose down
+    [ec2-user@ip-172-31-45-193 ~]$ docker-compose up -d
+    

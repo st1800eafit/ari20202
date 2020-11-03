@@ -1,0 +1,12 @@
+version: '3'
+services:
+  solr:
+    container_name: my_solr
+    image: bitnami/solr:latest
+    ports:
+      - "8983:8983"
+    volumes:
+            - ./datalake:/bitnami/datalake
+            - ./solr:/bitnami
+    environment:
+      - SOLR_CORE=taller2

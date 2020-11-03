@@ -1,0 +1,18 @@
+se logea a la máquina ec2 en aws:
+
+local en su máquina: ssh -i "st1800.pem" ec2-user@ec2-34-203-149-125.compute-1.amazonaws.com
+
+
+[ec2-user@ip-172-31-45-193 ~]$ mkdir datalake
+
+[ec2-user@ip-172-31-45-193 ~]$ pwd
+/home/ec2-user
+
+[ec2-user@ip-172-31-45-193 ~]$ curl https://st1800dataset.s3.amazonaws.com/papers-pdf-txt.zip -o papers-pdf-txt.zip
+
+[ec2-user@ip-172-31-45-193 ~]$ cd datalake
+[ec2-user@ip-172-31-45-193 ~]$ unzip ../papers-pdf-txt.zip
+[ec2-user@ip-172-31-45-193 ~]$ rm -rf __MACOSX
+
+
+
