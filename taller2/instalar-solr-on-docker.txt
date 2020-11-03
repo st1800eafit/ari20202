@@ -2,7 +2,7 @@
 
 copie el docker-compose.yml del github:
 
-    [ec2-user@ip-172-31-45-193 ~]$ curl https://raw.githubusercontent.com/st1800eafit/ari20202/master/taller2/docker-compose.yml -o $HOME/docker-compose.yml
+    [ec2-user@ip-172-31-45-193 ~]$ curl https://raw.githubusercontent.com/st1800eafit/ari20202/main/taller2/docker-compose.yml -o $HOME/docker-compose.yml
 
     [ec2-user@ip-172-31-45-193 ~]$ mkdir datalake
     [ec2-user@ip-172-31-45-193 ~]$ mkdir solr
